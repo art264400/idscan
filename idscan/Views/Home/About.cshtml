@@ -1,7 +1,28 @@
 ﻿@{
     ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
-
-<p>Use this area to provide additional information.</p>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"><font></font>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script><font></font>
+<table id="table_id" class="display table-bordered"><font></font>
+    <thead><font></font>
+    <tr><font></font>
+        <th>Column 1</th><font></font>
+        <th>Column 2</th><font></font>
+    </tr><font></font>
+    </thead><font></font>
+    <tbody><font></font>
+    <tr><font></font>
+        <td>Row 1 Data 1</td><font></font>
+        <td>Row 1 Data 2</td><font></font>
+    </tr><font></font>
+    <tr><font></font>
+        <td>Row 2 Data 1</td><font></font>
+        <td>Row 2 Data 2</td><font></font>
+    </tr><font></font>
+    </tbody><font></font>
+</table><font></font>
+<script type="text/javascript" >
+    $(document).ready( function () {
+            $('#table_id').DataTable();
+    } );
+</script>

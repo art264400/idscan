@@ -2,105 +2,147 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Package Management" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Bring in libraries from NuGet and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.1.1/css/tabulator.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.1.1/js/tabulator.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/animatedModal.js"></script>
+
+
+<title>Document</title>
+<div>
+    <select id="filter-field">
+        <option></option>
+        <option value="name">Имя</option>
+        <option value="phone">Телефон</option>
+    </select>
+
+    <select id="filter-type">
+        <option value="=">=</option>
+        <option value="<"><</option>
+        <option value="<="><=</option>
+        <option value=">">></option>
+        <option value=">=">>=</option>
+        <option value="!=">!=</option>
+        <option value="like">like</option>
+    </select>
+    <input id="filter-value" type="text" placeholder="Значение для фильтра">
+    <button id="filter-clear">Отчистить фильтр</button>
 </div>
 
-<div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
+<button id="myBtn" >Добавить пользователя</button>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <input id="contactId" type="text" hidden />
+        <div>
+            <label>Имя</label>
+            <input id="name" type="text" />
+        </div>
+        <div>
+            <label>Телефон</label>
+            <input id="phone" type="text" />
+        </div>
     </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Overview</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Run &amp; Deploy</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
-        </ul>
+    <div class="close">
+        <input  type="button" id="ButtonCancel" value="отмена" />
+        <input type="button" id="ButtonOk" value="сохранить" />
     </div>
 </div>
+<div id="example-table"></div>
+
+<script type="text/javascript" src="js/tab.js"></script>
+
+<script type="text/javascript" src="js/postContact.js"></script>
+
+
+
+
+
+
+@*//function showCover() {
+    //    let coverDiv = document.createElement('div');
+    //    coverDiv.id = 'cover-div';
+
+    //    // убираем возможность прокрутки страницы во время показа модального окна с формой
+    //    document.body.style.overflowY = 'hidden';
+
+    //    document.body.append(coverDiv);
+    //}
+    //function hideCover() {
+    //    document.getElementById('cover-div').remove();
+    //    document.body.style.overflowY = '';
+    //}
+    //function showPrompt(text, callback, callback1) {
+    //    showCover();
+    //    let form = document.getElementById('prompt-form');
+    //    let buttonOk = document.getElementById('ok');
+    //    let container = document.getElementById('prompt-form-container');
+    //    let name = document.getElementById('name');
+    //    let phone = document.getElementById('phone');
+    //    document.getElementById('prompt-message').innerHTML = text;
+    //    name.value = '';
+    //    phone.value = '';
+    //    function complete(value, value1) {
+    //        hideCover();
+    //        container.style.display = 'none';
+    //        document.onkeydown = null;
+    //        callback(value);
+    //        callback1(value1);
+    //    }
+
+    //    buttonOk.onclick = function () {
+    //        let name = name.value;
+    //        let phone = phone.value;
+    //        if (name == '' || phone == '') return false; // игнорируем отправку пустой формы
+
+    //        complete(name, phone);
+    //        return false;
+    //    };
+
+    //form.cancel.onclick = function() {
+    //    complete(null);
+    //};
+
+    //document.onkeydown = function(e) {
+    //    if (e.key == 'Escape') {
+    //        complete(null);
+    //    }
+    //};
+
+    //let lastElem = form.elements[form.elements.length - 1];
+    //let firstElem = form.elements[0];
+
+    //lastElem.onkeydown = function(e) {
+    //    if (e.key == 'Tab' && !e.shiftKey) {
+    //        firstElem.focus();
+    //        return false;
+    //    }
+    //};
+
+    //firstElem.onkeydown = function(e) {
+    //    if (e.key == 'Tab' && e.shiftKey) {
+    //        lastElem.focus();
+    //        return false;
+    //    }
+    //};
+
+    //    container.style.display = 'block';
+    //    //container.elements.name.focus();
+    //}
+
+    //document.getElementById('add-row').onclick = function () {
+    //    showPrompt("Добавить новый контакт)", function (value, value1) {
+    //        $.post(
+    //            "/api/Contact",
+    //            {
+    //                Name: value,
+    //                Phone: value1 * 1,
+    //                UserId: 1
+    //            },
+    //        );
+    //        GetData();
+    //    });
+    //};
+
+*@
