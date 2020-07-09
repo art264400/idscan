@@ -17,7 +17,7 @@ close.onclick = function () {
 }
 
 window.onclick = function (event) {
-    if (event.target == modal) {
+    if (event.target === modal) {
         modal.style.display = "none";
     }
 }
@@ -26,8 +26,8 @@ ok.onclick = function () {
     let contactId = document.getElementById('contactId').value;
     let name = document.getElementById('name').value;
     let phone = document.getElementById('phone').value;
-    if (name == '' || phone == '') return false; // игнорируем отправку пустой формы
-    if (contactId == "") {
+    if (name === '' || phone === '') return false; // игнорируем отправку пустой формы
+    if (contactId === "") {
         $.post(
             "/api/Contact",
             {

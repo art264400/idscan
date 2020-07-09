@@ -72,7 +72,7 @@ function updateFilter() {
 
     var filter = filterVal;
 
-    if (filterVal == "function") {
+    if (filterVal === "function") {
         typeEl.disabled = true;
         valueEl.disabled = true;
     } else {

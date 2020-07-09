@@ -14,8 +14,31 @@ namespace idscan.Models
             : base(options)
         {
             //Database.EnsureDeleted();
-            Database.EnsureCreated();   // создаем базу данных при первом обращении
+            Database.EnsureCreated();   
            
+        }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<User>().HasData(
+        //        new User() { Id = 1, Login ="mino", Password = "123"});
+        //    modelBuilder.Entity<Contact>().HasData(
+        //        new Contact() { Id = 1, Name = "Артур", Password = "123" });
+        //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasData(
+                new User[]
+                {
+                    new User {Id=1, Login = "mino", Password = "123"},
+                    new User {Id=2,Login = "ivan", Password = "123"},
+                });
+                modelBuilder.Entity<Contact>().HasData(new Contact[]
+                {
+                        new Contact(){Id=1, Name = "Artur",Phone = "89513456356", UserId = 1},
+                        new Contact(){Id=2, Name = "Yurii",Phone = "89564784765", UserId = 2}
+                });
         }
     }
 }
